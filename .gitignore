@@ -1,0 +1,36 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Production build output
+dist
+dist-ssr
+*.local
+tsconfig.tsbuildinfo
+
+# Agent skills cache
+.agents
+
+# Media, video extractions, and archives
+*.mp4
+*.zip
+*.tar.gz
+inspection_frames/
+video_analysis/
+video_breakdown/
+video_screens/
+
+# Logs & runtime
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+.env
+.env.*
+
+# OS and Editor
+.vscode
+.idea
+.DS_Store
+Thumbs.db

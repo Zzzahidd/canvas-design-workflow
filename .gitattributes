@@ -1,0 +1,19 @@
+# GitHub Linguist Language Configuration
+# Classify the repository primarily as TypeScript / React
+
+*.ts linguist-detectable=true
+*.tsx linguist-detectable=true
+*.css linguist-detectable=true
+*.html linguist-detectable=true
+
+# Ignore configuration and metadata from language statistics
+*.json linguist-detectable=false
+*.lock linguist-detectable=false
+*.yaml linguist-detectable=false
+*.yml linguist-detectable=false
+
+# Exclude any Python files completely from language stats
+*.py linguist-vendored=true
+*.py linguist-detectable=false
+.agents/** linguist-vendored=true
+.agents/** linguist-detectable=false
