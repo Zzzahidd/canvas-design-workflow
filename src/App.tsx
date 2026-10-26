@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { InfiniteCanvas } from '@/components/canvas/InfiniteCanvas';
 import { CanvasToolbarBottom } from '@/components/canvas/CanvasToolbarBottom';
-import { CanvasBadges } from '@/components/canvas/CanvasBadges';
 import { ShortcutsModal } from '@/components/canvas/ShortcutsModal';
 import { useCanvasStore } from '@/store/canvasStore';
 import { useRoutineStore } from '@/store/routineStore';
@@ -119,12 +118,6 @@ export const App: React.FC = () => {
           resetView();
           handleFocusConcept('day1');
         }}
-      />
-
-      {/* Badges & Floating Quick Menu */}
-      <CanvasBadges
-        onOpenShortcuts={() => setShowShortcuts(true)}
-        onFocusConcept={handleFocusConcept}
       />
 
       {/* Keyboard Shortcuts Dialog */}
