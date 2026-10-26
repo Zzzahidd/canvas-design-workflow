@@ -39,16 +39,16 @@
     background-color: var(--canvas-bg);
     color: var(--text-primary);
     user-select: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: subpixel-antialiased;
   }
 
-  /* Low-End CPU / Potato PC Canvas Optimizations */
+  /* Canvas Plane: Crisp Vector Text & Sharp Elements at Any Zoom Level */
   .infinite-canvas-plane {
     transform-origin: 0 0;
-    will-change: transform;
-    backface-visibility: hidden;
     transform-style: flat;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: subpixel-antialiased;
   }
 
   /* Cursor States: Spacebar Hand & Grabbing */

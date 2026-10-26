@@ -83,7 +83,7 @@ export const BoardWrapper: React.FC<BoardWrapperProps> = ({
     return (
       <div
         style={{
-          transform: `translate3d(${board.x}px, ${board.y}px, 0px)`,
+          transform: `translate(${board.x}px, ${board.y}px)`,
           width: `${board.width}px`,
           height: `${board.height}px`,
         }}
@@ -102,7 +102,7 @@ export const BoardWrapper: React.FC<BoardWrapperProps> = ({
   return (
     <div
       style={{
-        transform: `translate3d(${board.x}px, ${board.y}px, 0px)`,
+        transform: `translate(${board.x}px, ${board.y}px)`,
         width: `${board.width}px`,
         zIndex: isSelected ? 50 : board.zIndex,
       }}

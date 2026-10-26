@@ -30,10 +30,10 @@ export const InfiniteCanvas: React.FC = () => {
   const rafIdRef = useRef<number | null>(null);
   const debounceSyncRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Directly mutate DOM transform via hardware transform blit (0 React re-renders during gestures)
+  // Directly mutate DOM transform with crisp subpixel 2D transform (ensures zero blur at any zoom level)
   const applyTransformDirect = useCallback((x: number, y: number, zoom: number) => {
     if (planeRef.current) {
-      planeRef.current.style.transform = `translate3d(${x}px, ${y}px, 0px) scale(${zoom})`;
+      planeRef.current.style.transform = `translate(${x}px, ${y}px) scale(${zoom})`;
     }
   }, []);
 
@@ -387,14 +387,10 @@ export const InfiniteCanvas: React.FC = () => {
         }}
       />
 
-      {/* Infinite Canvas Hardware-Accelerated Plane */}
+      {/* Infinite Canvas Crisp Vector Surface */}
       <div
         ref={planeRef}
-        className="infinite-canvas-plane canvas-plane-surface absolute top-0 left-0"
-        style={{
-          width: '15000px',
-          height: '2400px',
-        }}
+        className="infinite-canvas-plane canvas-plane-surface absolute top-0 left-0 w-0 h-0"
       >
         {boards.map((board) => {
           const isVisible = !!visibleBoardMap[board.id];
